@@ -14,3 +14,10 @@ rm -f nvim-linux64.tar.gz
 
 git clone --depth 1 https://github.com/wbthomason/packer.nvim \
     ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+mkdir ~/.config
+cp -r ./.config ~/.config/
+
+cp ./.bashrc ~/.bashrc
+cp ./.bash_aliases ~/.bash_aliases
+
