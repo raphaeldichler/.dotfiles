@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if [ -z ${SUDO_USER} ]; then
+    PROFILE=$USER
+else
+    PROFILE=$SUDO_USER
+fi
+
 apt-get update && apt-get upgrade -y
 
 # install specified software
@@ -23,4 +29,7 @@ cp ./.bashrc $HOME/.bashrc
 cp ./.bash_aliases $HOME/.bash_aliases
 cp ./tmux.conf $HOME/tmux.conf
 
-source $HOME/.bashrs
+chown $PROFILE:$PROFILE -R $HOME
+source $HOME/.bashrc
+
+echo "Setup complete"
