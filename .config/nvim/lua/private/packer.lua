@@ -18,6 +18,11 @@ local packer_bootstrap = ensure_packer()
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
+
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
@@ -43,7 +48,6 @@ return require('packer').startup(function(use)
     use( 'theprimeagen/harpoon' )
     use( 'mbbill/undotree' )
     use( 'tpope/vim-fugitive' )
-    use( 'github/copilot.vim' )
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -59,9 +63,5 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'},
         }
     }
-
-    if packer_bootstrap then
-        require('packer').sync()
-    end
 
 end)
