@@ -2,14 +2,12 @@
 # Install
 
 ```console
-bash <(curl -s https://raw.githubusercontent.com/raphaeldichler/.dotfiles/refs/heads/master/setup.sh)
+git clone https://github.com/raphaeldichler/.dotfiles.git
+cd .dotfile
+chmod +x install.sg
+sudo -E ./install.sh
 ```
 
-## TODO
-
-If exists remove this program, because it doesnt allway me autocomplete so easly.
-
-printerbanner
 
 
 
