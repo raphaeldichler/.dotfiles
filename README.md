@@ -2,7 +2,7 @@
 # Install
 
 ```console
-bash <(curlbash <(curl -s https://raw.githubusercontent.com/raphaeldichler/.dotfiles/refs/heads/master/setup.sh)
+bash <(curl -s https://raw.githubusercontent.com/raphaeldichler/.dotfiles/refs/heads/master/setup.sh)
 ```
 
 ## TODO
