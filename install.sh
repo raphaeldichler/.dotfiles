@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 if [ -z ${SUDO_USER} ]; then
     PROFILE=$USER
 else
@@ -32,4 +34,8 @@ cp ./tmux.conf $HOME/tmux.conf
 chown $PROFILE:$PROFILE -R $HOME
 source $HOME/.bashrc
 
+export PATH=$PATH:/opt/nvim-linux64/bin
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+
 echo "Setup complete"
+echo "Reopen terminal or run source ~/.bashrc"
