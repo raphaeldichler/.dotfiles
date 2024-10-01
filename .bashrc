@@ -104,3 +104,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
+function b() {
+	local s=$1
+	echo "$1" | base64 -d
+} 
