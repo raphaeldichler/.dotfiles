@@ -13,10 +13,10 @@ while read package; do
   apt-get install -y $package
 done < software-list.txt
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-rm -rf /opt/nvim
-tar -C /opt -xzf nvim-linux64.tar.gz
-rm -f nvim-linux64.tar.gz
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 mkdir -p $HOME/.config
 rm -rf $HOME/.config/nvim
