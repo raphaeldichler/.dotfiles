@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -x
-
 if [ -z ${SUDO_USER} ]; then
     PROFILE=$USER
 else
@@ -35,7 +33,9 @@ export PATH=$PATH:/opt/nvim-linux64/bin
 
 # install golang
 wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
-rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
+sudo rm -rf /usr/local/go
+sudo mkdir go
+sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
 # install lsp
