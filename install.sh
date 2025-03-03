@@ -25,6 +25,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
     $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 mkdir -p $HOME/.config
+rm -rf $HOME/.config/nvim
 cp -r nvim $HOME/.config
 
 cp ./.bashrc $HOME/.bashrc
@@ -35,6 +36,15 @@ chown $PROFILE:$PROFILE -R $HOME
 source $HOME/.bashrc
 
 export PATH=$PATH:/opt/nvim-linux64/bin
+
+# install golang
+wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
+rm -rf /usr/local/go && tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
+export PATH=$PATH:/usr/local/go/bin
+
+# install lsp
+./lsp/lua.sh
+./lsp/golang.sh
 
 echo "Setup complete"
 echo "Reopen terminal or run source ~/.bashrc"
