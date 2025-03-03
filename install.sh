@@ -25,7 +25,7 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim \
     $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
 
 mkdir -p $HOME/.config
-cp -r ./.config $HOME
+cp -r nvim $HOME/.config
 
 cp ./.bashrc $HOME/.bashrc
 cp ./.bash_aliases $HOME/.bash_aliases
@@ -35,7 +35,6 @@ chown $PROFILE:$PROFILE -R $HOME
 source $HOME/.bashrc
 
 export PATH=$PATH:/opt/nvim-linux64/bin
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 echo "Setup complete"
 echo "Reopen terminal or run source ~/.bashrc"
