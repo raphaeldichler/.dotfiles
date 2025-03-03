@@ -34,7 +34,7 @@ export PATH=$PATH:/opt/nvim-linux64/bin
 # install golang
 wget https://go.dev/dl/go1.24.0.linux-amd64.tar.gz
 sudo rm -rf /usr/local/go
-sudo mkdir go
+sudo mkdir /usr/local/go
 sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 

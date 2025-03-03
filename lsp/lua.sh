@@ -7,8 +7,7 @@ sudo rm -rf lua-language-server
 sudo git clone https://github.com/LuaLS/lua-language-server.git
 cd lua-language-server
 sudo ./make.sh
-sudo chmod 0777 -R .
-#lua-language-server
+sudo chmod 0777 -R . 
 
 cat <<EOL | sudo tee /usr/local/bin/lua-language-server > /dev/null
 #!/bin/bash
