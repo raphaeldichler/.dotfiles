@@ -20,10 +20,6 @@ rm -rf /opt/nvim
 tar -C /opt -xzf nvim-linux64.tar.gz
 rm -f nvim-linux64.tar.gz
 
-rm -rf $HOME/.local/share/nvim/site/pack/packer/
-git clone --depth 1 https://github.com/wbthomason/packer.nvim \
-    $HOME/.local/share/nvim/site/pack/packer/start/packer.nvim
-
 mkdir -p $HOME/.config
 rm -rf $HOME/.config/nvim
 cp -r nvim $HOME/.config
