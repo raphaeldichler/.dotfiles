@@ -59,8 +59,21 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
-PS1='\[\033[1;33m\][\u:\w]\[\033[00m\]\033[1;36m$(__git_ps1 " (%s)")\033[0m\$ '
-unset color_prompt force_color_prompt
+build_ps1() {
+    local git_branch=$(git branch --show-current 2>/dev/null)
+    local git_prompt=""
+
+    local COLOR_USER_DIR=$(tput setaf 222)
+    local COLOR_GIT_BRANCH=$(tput setaf 6)
+    local COLOR_RESET=$(tput sgr0)
+
+    if [[ -n "$git_branch" ]]; then
+        git_prompt="(${git_branch})"
+    fi
+
+    PS1="\[$COLOR_USER_DIR\][\u:\w] \[$COLOR_GIT_BRANCH\]$git_prompt\\$ \[$COLOR_RESET\]"
+}
+PROMPT_COMMAND=build_ps1
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
