@@ -93,9 +93,14 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
-export PATH=$JAVA_HOME/bin:$PATH
-export PATH=$PATH:/opt/nvim-linux64/bin
+add_to_path() {
+    for dir in "$@"; do
+        if [ -d "$dir" ] && [[ ":$PATH:" != *":$dir:"* ]]; then
+            export PATH="$dir:$PATH"
+        fi
+    done
+}
+add_to_path "/usr/lib/jvm/java-17-openjdk-amd64" "$JAVA_HOME/bin" "/opt/nvim-linux64/bin" "/usr/local/go/bin" "$(go env GOPATH)/bin"
 
 alias ll='ls -alF'
 alias la='ls -A'
