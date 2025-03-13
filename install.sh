@@ -38,6 +38,9 @@ sudo mkdir /usr/local/go
 sudo tar -C /usr/local -xzf go1.24.0.linux-amd64.tar.gz
 export PATH=$PATH:/usr/local/go/bin
 
+# tree-sitter dependency
+sudo npm install -g tree-sitter-cli
+
 # install lsp
 ./lsp/lua.sh
 ./lsp/golang.sh
