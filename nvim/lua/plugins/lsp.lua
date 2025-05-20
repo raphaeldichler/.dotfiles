@@ -18,6 +18,8 @@ return {
       require("lspconfig").gopls.setup { capabilites = capabilities }
       require("lspconfig").pyright.setup { capabilites = capabilities }
 
+      vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, { desc = "[r]e[n]ame symbol" })
+      
       vim.api.nvim_create_autocmd('LspAttach', {
         callback = function(args)
           local c = vim.lsp.get_client_by_id(args.data.client_id)
