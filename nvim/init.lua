@@ -1,4 +1,5 @@
 require("config.lazy")
+require("lspconfig").protols.setup{}
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
