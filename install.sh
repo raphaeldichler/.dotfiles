@@ -44,6 +44,7 @@ sudo npm install -g tree-sitter-cli
 # install lsp
 ./lsp/lua.sh
 ./lsp/golang.sh
+./lsp/buf_ls.sh
 
 echo "Setup complete"
 echo "Reopen terminal or run source ~/.bashrc"
