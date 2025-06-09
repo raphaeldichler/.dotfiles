@@ -32,7 +32,6 @@ return {
       }
 
       require("lspconfig").pyright.setup { capabilites = capabilities }
-      require('lspconfig').buf_ls.setup {}
 
       require('lspconfig').clangd.setup({
         cmd = { "clangd-18" },
