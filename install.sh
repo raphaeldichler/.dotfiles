@@ -41,6 +41,11 @@ export PATH=$PATH:/usr/local/go/bin
 # tree-sitter dependency
 sudo npm install -g tree-sitter-cli
 
+# install rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+rustup update
+
 # install lsp
 ./lsp/lua.sh
 ./lsp/golang.sh
