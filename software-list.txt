@@ -5,3 +5,4 @@ tmux
 lua5.3
 ripgrep
 fd-find
+fzf
